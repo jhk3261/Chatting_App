@@ -1,7 +1,14 @@
+import 'package:chatting/firebase_options.dart';
 import 'package:chatting/screens/main_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); //firebase 연동 초기화
+  await Firebase.initializeApp(
+    //firebase 연동 초기화
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
